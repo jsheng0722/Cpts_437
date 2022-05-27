@@ -1,0 +1,28 @@
+1.<p></p>
+Ten and FirstMove have both stand and hit when it is false or true. So I pick Ace as root of decision tree. After that, I ruled out the case where Ace is false, because when it is false, it can be directly judged that play is stand. There is no big difference in the subsequent decision sequence.
+
+  Play = stand:
+    Ace = false
+       or
+    Ace = True and Ten = True and FirstMove = True
+
+  Play = hit:
+    Ace = True and Ten = True and FirstMove = False
+       or
+    Ace = True and Ten = False and FirstMove = True
+
+  
+  Hence: When Ace is false, directly judge it is stand, When Ace is True, judge whether Ten is false, if it is, it is hit, if it is not, judge Firstmove. Finally, if Firstmove is true, then stand, on the contrary it is hit.
+
+2.
+If 'Ace = false' then 'Play = stand';
+If 'Ace = True' and 'Ten = false' then 'Play = hit';
+If 'Ace = True' and 'Ten = true' and 'FirstMove = true' then 'Play = stand';
+If 'Ace = True' and 'Ten = true' and 'FirstMove = false' then 'Play = stand'
+
+3.<p></p>
+  Greedy algorithm means that it uses the local optimal choice to complete the global optimal solution.<p></p>
+  Most decision tree algorithms are greedy, because the decision tree makes the best choice at the end of each node, so an algorithm that can implement it is needed. Greedy refers to making the best decision in the steps, and recursively to achieve the decomposition of larger problems into smaller problems, and then solve them in the same way.
+
+4. <p></p>
+There are 100 positive examples and 100 negative examples. For a piece of random data, his prediction result is regarded as the majority. If one data is extracted each time as a verification, the corresponding training set will be reduced by one data, which will cause such data in the training set to occupy a minority and be predicted to be the opposite class, so it isn't 50% classification accuracy. It scores zero every time.
